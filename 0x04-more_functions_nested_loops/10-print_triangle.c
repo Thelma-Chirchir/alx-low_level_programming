@@ -1,20 +1,31 @@
-
 #include "main.h"
 
 /**
- * _isdigit - function that prints the sign of a number.
+ * print_triangle - function that a triangle, followed by a new line.
  *
- * @c: is a digit
+ * @size: Where size is the size of the triangle.
  *
- * Return: 1 if c is a digit, 0 otherwise.
-*/
+ * Return: 0.
+ */
 
-int _isdigit(int c)
+void print_triangle(int size)
 {
-	if (c >= '0' && c <= '9')
+	int row, colum, k;
+
+	if (size <= 0)
 	{
-		return (1);
+		_putchar('\n');
 	}
 	else
-		return (0);
+	{
+		for (row = 0; row < size ; row++)
+		{
+			for (colum = size - row ; colum > 1; colum--)
+				_putchar(' ');
+			for (k = 0 ; k <= row; k++)
+				_putchar('#');
+
+			_putchar('\n');
+		}
+	}
 }
