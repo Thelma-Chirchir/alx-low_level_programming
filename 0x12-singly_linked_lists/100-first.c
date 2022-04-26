@@ -1,20 +1,12 @@
-
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
-#include "lists.h"
 
 /**
- * print_start - print_start.
- *
- * Return: Nothing.
- *
- **/
+ * bmain - function executed before main
+ * Return: no return.
+ */
 
-void print_start(void)
+void __attribute__ ((constructor)) bmain()
 {
-	char *s1 = "You're beat! and yet, you must allow, \n";
-	char *s2 = "I bore my house upon my back!\n";
-
-	printf("%s%s", s1, s2);
+	printf("You're beat! and yet, you must allow");
+	printf(",\nI bore my house upon my back!\n");
 }
