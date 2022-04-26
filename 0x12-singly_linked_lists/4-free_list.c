@@ -1,29 +1,19 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <strings.h>
 #include "lists.h"
 
 /**
- * free_list - frees a list_t list.
- * @head: Pointer to the actual position of the linked list (struct)
- *
- * Return: Size of the linked_list.
- *
- **/
+ * free_list - frees a list
+ * @head: head of the linked list.
+ * Return: no return.
+ */
 
 void free_list(list_t *head)
 {
-	list_t *actual_node;
-	list_t *next_node;
+	list_t *current;
 
-	actual_node = head;
-
-	while (actual_node != NULL)
+	while ((current = head) != NULL)
 	{
-		next_node = actual_node->next;
-		free(actual_node->str);
-		free(actual_node);
-
-		actual_node = next_node;
+		head = head->next;
+		free(current->str);
+		free(current);
 	}
 }
