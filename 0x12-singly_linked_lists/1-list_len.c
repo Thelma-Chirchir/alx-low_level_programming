@@ -1,20 +1,19 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
-
 /**
- * list_len - returns the number of elements in a linked list_t.
- * @h: Pointer to the actual position of the linked lists (struct)
- *
- * Return: size of the linked_list
- *
- **/
+ * list_len - returns then number of elements in a list.
+ * @h: singly linked list.
+ * Return: number of elements in the list.
+ */
 
 size_t list_len(const list_t *h)
 {
-	if (h == NULL)
-		return (0);
+	size_t nelem;
 
-	return (1 + list_len(h->next));
+	nelem = 0;
+	while (h != NULL)
+	{
+		h = h->next;
+		nelem++;
+	}
+	return (nelem);
 }
